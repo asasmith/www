@@ -1,7 +1,7 @@
 {
   "name": "ELM",
   "description": "The Early Light Media website.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Tom Kraak",
   "scripts": {
     "start:dev": "source .env.secret && roots watch"
