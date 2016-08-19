@@ -1,0 +1,23 @@
+include ../mixins/_nav
+include ../mixins/_header
+include ../mixins/_vimeo-player
+
+doctype html
+include ../includes/_ie-conditional-comments
+include ../includes/_head
+  
+  body(id='page-work-single-video')
+    +nav()
+    +header('yellow')
+    .container.single-video
+      +vimeo-player(entry.videoId)
+      h1= entry.title
+      if entry.body
+        != marked(entry.body)
+      else
+        | No entry body!
+      br
+      .text-center
+        a(href='/work', class='btn-link') Back to All Work
+    include ../includes/_footer
+    include ../includes/_social-icons.svg
