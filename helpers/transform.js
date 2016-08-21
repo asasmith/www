@@ -1,7 +1,11 @@
 buildEmbed = require('./build-embed');
 
 module.exports = function(entry) {
-  entry.content = entry.content.replace(/\[\[(\d+)\]\]/g, buildEmbed);
+  if (entry.content) {
+    entry.content = entry.content.replace(/\[\[(\d+)\]\]/g, buildEmbed);
+  } else {
+    entry.body = entry.body.replace(/\[\[(\d+)\]\]/g, buildEmbed);
+  }
   return entry;
 }
 
