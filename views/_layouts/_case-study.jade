@@ -1,29 +1,26 @@
 include ../mixins/_nav
 include ../mixins/_header
-include ../mixins/_post-body
 
 doctype html
 include ../includes/_ie-conditional-comments
 include ../includes/_head
   
-  body(id='post')
-  
+  body(id='page-work-item')
     .master-wrapper
       div(
         class='master parallax'
         data-img-mobile='{{ page.image-mobile }}'
-        style='background-image:url(#{asset(entry.image)})'
+        style='background-image:url(#{asset(entry.masterImage)})'
       )
         +nav()
         +header('yellow')
-        include ../includes/_post-head 
+        include ../includes/_post-head-case-study 
     .content
       .container
         .row
           .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-            != marked(entry.content, { renderer: renderer })
+            != marked(entry.body, { renderer: renderer })
             include ../includes/_twitter-post-feedback
     .container
       include ../includes/_footer
   include ../includes/_social-icons.svg
-  

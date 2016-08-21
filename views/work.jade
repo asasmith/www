@@ -1,0 +1,43 @@
+include ./mixins/_nav
+include ./mixins/_header
+include ./mixins/_vimeo-player
+
+doctype html
+include ./includes/_ie-conditional-comments
+include ./includes/_head
+  
+  body(id='work')
+    +nav()
+    +header('yellow')
+    .container
+      +vimeo-player(140809160)
+      .filter
+        a.btn-link.active(data-filter='*') All
+        a.btn-link(data-filter='.case-study') Case Studies
+        a.btn-link(data-filter='.video') Videos
+      .work-index
+        - for w in contentful.work
+            if w.isCaseStudy
+              .case-study-master.work-item.case-study(
+                data-href='work/#{w.isCaseStudy.fields.permalink}'
+                data-category='case-study'
+                data-img-sm= w.isCaseStudy.fields.bandImageSm.fields.file.fileName
+                data-img-md= w.isCaseStudy.fields.bandImageMd.fields.file.fileName
+                style='background-image:url(#{w.isCaseStudy.fields.bandImage.fields.file.url})'
+              )
+                .case-study-panel
+                  header
+                    h1
+                      span= w.isCaseStudy.fields.client[0].fields.title
+                  h2= w.isCaseStudy.fields.title
+                  a(href='work/#{w.isCaseStudy.fields.permalink}') View Case Study
+            else 
+              a.work.work-item.video(
+                data-category='video'
+                href='work/#{w.isVideo.fields.permalink}'
+                alt= w.isVideo.fields.title
+                style='background-image:url(#{w.isVideo.fields.thumbnail.fields.file.url})'
+              )
+                span= w.isVideo.fields.hoverText
+      include ./includes/_footer
+  include ./includes/_social-icons.svg
