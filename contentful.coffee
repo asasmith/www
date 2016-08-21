@@ -1,16 +1,31 @@
-transform = require './helpers/transform' 
+transform = require './helpers/transform'
 
 module.exports = 
   access_token: process.env.CONTENTFUL_API_KEY
   management_token: process.env.CONTENTFUL_MAN_KEY
   space_id: '1ipf5oqx1rxu'
   content_types:
+    work:
+      id: 'allWork'
+      filters: {'order': 'fields.slot'}
+      write: 'data/all-work.json'
+    videos:
+      id: 'work'
+      template: 'views/_layouts/_video.jade'
+      path: (entry) -> "work/#{entry.permalink}"
+      write: 'data/videos.json'
+    case_studies:
+      id: 'caseStudy'
+      template: 'views/_layouts/_case-study.jade'
+      path: (entry) -> "work/#{entry.permalink}"
+      transform: transform
+      write: 'data/case-studies.json'
     posts:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
       transform: transform
-      write: '/data/posts.json'
+      write: 'data/posts.json'
     featured_post:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
