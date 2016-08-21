@@ -7,6 +7,7 @@ module.exports =
   content_types:
     work:
       id: 'allWork'
+      filters: {'order': 'fields.slot'}
       write: 'data/all-work.json'
     videos:
       id: 'work'
