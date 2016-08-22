@@ -5,9 +5,23 @@ module.exports =
   management_token: process.env.CONTENTFUL_MAN_KEY
   space_id: '1ipf5oqx1rxu'
   content_types:
+    page:
+      id: 'page'
+      filters: {
+                'order': 'sys.createdAt'
+               }
+      write: 'data/page.json'
+    meta:
+      id: 'meta'
+      filters: {
+                'order': 'sys.createdAt'
+               }
+      write: 'data/meta.json'
     work:
       id: 'allWork'
-      filters: {'order': 'fields.slot'}
+      filters: {
+                'order': 'fields.slot'
+               }
       write: 'data/all-work.json'
     videos:
       id: 'work'

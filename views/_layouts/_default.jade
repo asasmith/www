@@ -1,11 +1,14 @@
+- var page = helpers.getPageName(_path)
+include ../mixins/_seo
 include ../mixins/_nav
 include ../mixins/_header
 
 doctype html
 include ../includes/_ie-conditional-comments
++seo(title, description, page)
 include ../includes/_head
 
-  body(id= helpers.getPageName(_path))
+  body(id= page)
     +nav()
     .page-wrapper
       block header
