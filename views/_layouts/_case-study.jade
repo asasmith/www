@@ -1,8 +1,10 @@
+include ../mixins/_seo
 include ../mixins/_nav
 include ../mixins/_header
 
 doctype html
 include ../includes/_ie-conditional-comments
++seo(entry.seoTitle, entry.seoDescription)
 include ../includes/_head
   
   body(id='page-work-item')
