@@ -2,23 +2,23 @@ mixin img-panel(category)
   - var category = category
   case category
     when 'method'
-      - var postTitle = contentful.method[0].title
-      - var postSubTitle = contentful.method[0].boxTitle
-      - var category = contentful.method[0].category.fields.title
-      - var permalink = contentful.method[0]._url.replace(/.html$/,"") 
-      - var panelImage = contentful.method[0].imageBox
+      - var postTitle = contentful.method_category[0].title
+      - var postSubTitle = contentful.method_category[0].boxTitle
+      - var category = contentful.method_category[0].category.fields.title
+      - var permalink = contentful.method_category[0]._url.replace(/.html$/,"") 
+      - var panelImage = contentful.method_category[0].imageBox
     when 'road'
-      - var postTitle = contentful.road[0].title
-      - var postSubTitle = contentful.road[0].boxTitle
-      - var category = contentful.road[0].category.fields.title
-      - var permalink = contentful.road[0]._url.replace(/.html$/,"") 
-      - var panelImage = contentful.road[0].imageBox
+      - var postTitle = contentful.road_category[0].title
+      - var postSubTitle = contentful.road_category[0].boxTitle
+      - var category = contentful.road_category[0].category.fields.title
+      - var permalink = contentful.road_category[0]._url.replace(/.html$/,"") 
+      - var panelImage = contentful.road_category[0].imageBox
     when 'gear'
-      - var postTitle = contentful.gear[0].title
-      - var postSubTitle = contentful.gear[0].boxTitle
-      - var category = contentful.gear[0].category.fields.title
-      - var permalink = contentful.gear[0]._url.replace(/.html$/,"") 
-      - var panelImage = contentful.gear[0].imageBox
+      - var postTitle = contentful.gear_category[0].title
+      - var postSubTitle = contentful.gear_category[0].boxTitle
+      - var category = contentful.gear_category[0].category.fields.title
+      - var permalink = contentful.gear_category[0]._url.replace(/.html$/,"") 
+      - var panelImage = contentful.gear_category[0].imageBox
     default
       p Please pass a category to the mixin.
     

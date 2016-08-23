@@ -10,7 +10,7 @@ block content
     .page-blog-landing
       h2 Road
       .row
-        - for post in contentful.road
+        - for post in contentful.road_category
           .col-md-6
             - var postTitle = post.title
             - var postSubTitle = post.boxTitle

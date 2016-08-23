@@ -10,7 +10,7 @@ block content
     .page-blog-landing
       h2 Gear
       .row
-        - for post in contentful.gear
+        - for post in contentful.gear_category
           .col-md-4
             - var postTitle = post.title
             - var postSubTitle = post.boxTitle
