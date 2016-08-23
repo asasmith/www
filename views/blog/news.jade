@@ -10,7 +10,7 @@ block content
     .page-blog-landing
       h2 News
       .row
-        - for post in contentful.news
+        - for post in contentful.news_category
           .col-md-4
             - var postTitle = post.title
             - var postSubTitle = post.boxTitle

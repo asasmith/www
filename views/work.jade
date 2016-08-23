@@ -19,28 +19,28 @@ include ./includes/_head
         a.btn-link(data-filter='.case-study') Case Studies
         a.btn-link(data-filter='.video') Videos
       .work-index
-        - for w in contentful.work
-            if w.isCaseStudy
+        - for p in contentful.projects
+            if p.isCaseStudy
               .case-study-master.work-item.case-study(
-                data-href='work/#{w.isCaseStudy.fields.permalink}'
+                data-href='work/#{p.isCaseStudy.fields.permalink}'
                 data-category='case-study'
-                data-img-sm= w.isCaseStudy.fields.bandImageSm.fields.file.fileName
-                data-img-md= w.isCaseStudy.fields.bandImageMd.fields.file.fileName
-                style='background-image:url(#{w.isCaseStudy.fields.bandImage.fields.file.url})'
+                data-img-sm= p.isCaseStudy.fields.bandImageSm.fields.file.fileName
+                data-img-md= p.isCaseStudy.fields.bandImageMd.fields.file.fileName
+                style='background-image:url(#{p.isCaseStudy.fields.bandImage.fields.file.url})'
               )
                 .case-study-panel
                   header
                     h1
-                      span= w.isCaseStudy.fields.client[0].fields.title
-                  h2= w.isCaseStudy.fields.title
-                  a(href='work/#{w.isCaseStudy.fields.permalink}') View Case Study
+                      span= p.isCaseStudy.fields.client[0].fields.title
+                  h2= p.isCaseStudy.fields.title
+                  a(href='work/#{p.isCaseStudy.fields.permalink}') View Case Study
             else 
               a.work.work-item.video(
                 data-category='video'
-                href='work/#{w.isVideo.fields.permalink}'
-                alt= w.isVideo.fields.title
-                style='background-image:url(#{w.isVideo.fields.thumbnail.fields.file.url})'
+                href='work/#{p.isVideo.fields.permalink}'
+                alt= p.isVideo.fields.title
+                style='background-image:url(#{p.isVideo.fields.thumbnail.fields.file.url})'
               )
-                span= w.isVideo.fields.hoverText
+                span= p.isVideo.fields.hoverText
       include ./includes/_footer
   include ./includes/_social-icons.svg

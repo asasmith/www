@@ -10,7 +10,7 @@ block content
     .page-blog-landing
       h2 Culture
       .row
-        - for post in contentful.culture
+        - for post in contentful.culture_category
           .col-md-6
             - var postTitle = post.title
             - var postSubTitle = post.boxTitle
