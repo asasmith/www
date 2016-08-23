@@ -11,18 +11,90 @@ module.exports =
                 'order': 'sys.createdAt'
                }
       write: 'data/page.json'
-    meta:
-      id: 'meta'
+    index:
+      id: 'page'
       filters: {
-                'order': 'sys.createdAt'
+                'sys.id': '2EP8iApoBCGmImscKyUsgg'
                }
-      write: 'data/meta.json'
+      write: 'data/page/index.json'
+    blog:
+      id: 'page'
+      filters: {
+                'sys.id': '7u7GKPsWJOoCEKeoGoUMm2'
+               }
+      write: 'data/page/blog.json'
     work:
+      id: 'page'
+      filters: {
+                'sys.id': '5sKxcqT8CkwawyI0MM4OEE'
+               }
+      write: 'data/page/blog.json'
+    about:
+      id: 'page'
+      filters: {
+                'sys.id': '2tHksa8Eu8kWcQ624i6U0A'
+               }
+      write: 'data/page/about.json'
+    contact:
+      id: 'page'
+      filters: {
+                'sys.id': '55jkHpoleoWqwkMGMYucWC'
+               }
+      write: 'data/page/contact.json'
+    terms:
+      id: 'page'
+      filters: {
+                'sys.id': '2TR2BYxApic8oQ00QAIwEU'
+               }
+      write: 'data/page/terms.json'
+    privacy:
+      id: 'page'
+      filters: {
+                'sys.id': '42xBBSeONOeiUeqCMYC6mI'
+               }
+      write: 'data/page/privacy.json'
+    animation:
+      id: 'page'
+      filters: {
+                'sys.id': '2eT6mhSjNW88UAMm60EIMU'
+               }
+      write: 'data/page/animation.json'
+    culture:
+      id: 'page'
+      filters: {
+                'sys.id': '6Cs8hXvY9GeeoKmgUcccQ'
+               }
+      write: 'data/page/culture.json'
+    gear:
+      id: 'page'
+      filters: {
+                'sys.id': '5bpNCvwf7aesAWsmeOIQmu'
+               }
+      write: 'data/page/gear.json'
+    method:
+      id: 'page'
+      filters: {
+                'sys.id': '1uVStyEiYwyyegms0kGIUw'
+               }
+      write: 'data/page/method.json'
+    news:
+      id: 'page'
+      filters: {
+                'sys.id': '3rlg3P0Nv2E6yS0WaSSioO'
+               }
+      write: 'data/page/news.json'
+    road:
+      id: 'page'
+      filters: {
+                'sys.id': '2KvZKIeonKC8E64EWUeS2m'
+               }
+      write: 'data/page/road.json'
+    projects:
       id: 'allWork'
       filters: {
                 'order': 'fields.slot'
                }
-      write: 'data/all-work.json'
+      write: 'data/projects.json'
     videos:
       id: 'work'
       template: 'views/_layouts/_video.jade'
@@ -50,7 +122,7 @@ module.exports =
                 'order': '-sys.createdAt'
                }
       transform: transform
-    animation:
+    animation_category:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
@@ -59,7 +131,7 @@ module.exports =
                 'fields.category.sys.id': '5607jfwr8QYki6IcUiueCY'
                }
       transform: transform
-    culture:
+    culture_category:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
@@ -68,7 +140,7 @@ module.exports =
                 'fields.category.sys.id': '57xrbtbFZuYsO4qGY2Y2q0'
                }
       transform: transform
-    gear:
+    gear_category:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
@@ -77,7 +149,7 @@ module.exports =
                 'fields.category.sys.id': '2xx0FKPSRmm0cKEu2SGMkK'
                }
       transform: transform
-    method:
+    method_category:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
@@ -86,7 +158,7 @@ module.exports =
                 'fields.category.sys.id': '6EfFP66ZckS2OYWa8u28EG'
                }
       transform: transform
-    news:
+    news_category:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
@@ -95,7 +167,7 @@ module.exports =
                 'fields.category.sys.id': '5o9c9wcypUEoOUSSmak8mM'
                }
       transform: transform
-    road:
+    road_category:
       id: 'blog'
       template: 'views/_layouts/_post.jade'
       path: (entry) -> "blog/#{entry.permalink}"
