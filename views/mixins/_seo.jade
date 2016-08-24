@@ -42,6 +42,9 @@ mixin seo(title, description, page)
         when 'road'
           title= contentful.road[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.road[0].meta.fields.seoDescription)
+        when 'thanks'
+          title= contentful.thanks[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.thanks[0].meta.fields.seoDescription)
   else
     title= title
     meta(name='description', content= description)
