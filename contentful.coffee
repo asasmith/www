@@ -176,6 +176,9 @@ module.exports =
                 'fields.category.sys.id': '4nMklZwz2oA4Uc0mCMiciy'
                }
       transform: transform
+    team:
+      id: 'team'
+      write: 'data/team.json'
     quotes:
       id: 'quote'
       filters: {'order': '-sys.createdAt'}
