@@ -1,0 +1,68 @@
+- var page = helpers.getPageName(_path)
+include ./mixins/_seo
+include ./mixins/_nav
+include ./mixins/_header
+
+doctype html
+include ./includes/_ie-conditional-comments
++seo(title, description, page)
+include ./includes/_head
+  
+  body(id= page)
+  
+    .master-wrapper
+      div(
+        class='master parallax'
+        data-img-mobile='#{contentful.contact[0].masterImage.fields.file.url}'
+        style='background-image:url(#{contentful.contact[0].masterImageSm.fields.file.url})'
+      )
+        +nav()
+        +header('yellow')
+        include ./includes/_page-head
+    #content
+      .container
+        .row
+          .col-md-push-8.col-md-4.col-sm-8.col-xs-10
+            div(itemscope='', itemtype='http://schema.org/LocalBusiness')
+              h2
+                span(itemprop='name') Early Light Media
+              div(itemprop='address', itemscope, itemtype='http://schema.org/PostalAddress')
+                span(itemprop='streetAddress') 1101 East 33rd Street
+                br
+                | Suite C306
+                br
+                span(itemprop='addressLocality') Baltimore
+                | ,
+                span(itemprop='addressRegion') MD
+                span(itemprop='postalCode') 21218
+              p
+                span(itemprop='telephone') (443) 451 - 7321
+                br
+                a(href='mailto:info@earlylightmedia.com', itemprop='email') info@earlylightmedia.com
+            h3 Let's talk.
+            form(action='//formspree.io/info@earlylightmedia.com', method='POST', autocomplete='on')
+            .form-group
+              label.sr-only(for='name') Name
+              input.form-control(type='text', name='Name', placeholder='Your Name', required)
+            .form-group
+              label.sr-only(for='email') Email
+              input.form-control(type='email', name='Email', input='email', placeholder='Your Email', required)
+            .form-group
+              label.sr-only(for='message') How can we help?
+              textarea.form-control(rows='5', name='Message', placeholder='How can we help?', required)
+            button.btn.btn-default(type='submit') Send
+            input(type='text', name='_gotcha', style='display:none')
+            input(type='hidden', name='_subject', value='New Website Inquiry')
+            input(type='hidden', name='_next', value='/contact/thanks')
+            br.visible-sm.visible-xs
+            br.visible-sm.visible-xs
+          .col-md-8.col-md-pull-4.col-sm-12.col-xs-12
+            iframe(
+              width='100%'
+              height='500px'
+              frameborder='0'
+              src='https://a.tiles.mapbox.com/v4/tkraak.m4fa11kn/attribution,zoompan,share.html?access_token=pk.eyJ1IjoidGtyYWFrIiwiYSI6ImtIUlFwWWMifQ.9eGUvqqUbyPiWYSbCx5IBw'
+            )
+    .container
+      include ./includes/_footer
+  include ./includes/_social-icons.svg
