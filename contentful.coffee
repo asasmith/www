@@ -89,6 +89,12 @@ module.exports =
                 'sys.id': '2KvZKIeonKC8E64EWUeS2m'
                }
       write: 'data/page/road.json'
+    thanks:
+      id: 'page'
+      filters: {
+                'sys.id': '5qXqpTzJSMy8MGQgmw2uWU'
+               }
+      write: 'data/page/thanks.json'
     projects:
       id: 'allWork'
       filters: {
