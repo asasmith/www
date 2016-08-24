@@ -1,0 +1,91 @@
+- var page = helpers.getPageName(_path)
+include ./mixins/_seo
+include ./mixins/_nav
+include ./mixins/_header
+include ./mixins/_post-body
+
+doctype html
+include ./includes/_ie-conditional-comments
++seo(title, description, page)
+include ./includes/_head
+  
+  body(id= page)
+  
+    .master-wrapper
+      div(
+        class='master parallax'
+        data-img-mobile='#{contentful.about[0].masterImage.fields.file.url}'
+        style='background-image:url(#{contentful.about[0].masterImageSm.fields.file.url})'
+      )
+        +nav()
+        +header('yellow')
+        include ./includes/_page-head
+    #content
+      .container
+        .row
+          .top.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+            if contentful.about[0].block[0].fields.body
+              != marked(contentful.about[0].block[0].fields.body)
+            else
+              | No block body!
+      .testimonial
+        .container
+          .row
+            .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+              h1= contentful.about[0].testimonial[0].fields.body
+              h2= contentful.about[0].testimonial[0].fields.attribution
+      .container.clients
+        .row
+          .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+            h1.head Our Clients
+            .clients-gallery
+              .gallery-cell
+                .row
+                  img(src='#{contentful.about[0].slider[0].fields.firstSlide.fields.file.url}', alt='Slide 1')
+              .gallery-cell
+                .row
+                  img(src='#{contentful.about[0].slider[0].fields.secondSlide.fields.file.url}', alt='Slide 2')
+              .gallery-cell
+                .row
+                  img(src='#{contentful.about[0].slider[0].fields.thirdSlide.fields.file.url}', alt='Slide 3')
+              .gallery-cell
+                .row
+                  img(src='#{contentful.about[0].slider[0].fields.fourthSlide.fields.file.url}', alt='Slide 4')
+      .testimonial
+        .container
+          .row
+            .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+              h1= contentful.about[0].testimonial[1].fields.body
+              h2= contentful.about[0].testimonial[1].fields.attribution
+      .container
+        .row
+          .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
+            h1.head Meet the Team
+            - for members, i in contentful.team
+              .row.profile
+                .col-md-4
+                  img(
+                    src='#{contentful.about[0].team[i].fields.memberImage.fields.file.url}'
+                    alt= contentful.about[0].team[i].fields.memberName
+                  )
+                .col-md-8
+                  h2.name= contentful.about[0].team[i].fields.memberName
+                  h3.title= contentful.about[0].team[i].fields.memberJobTitle
+                  p.text!= marked(contentful.about[0].team[i].fields.memberBio)
+    .container
+      include ./includes/_footer
+  include ./includes/_social-icons.svg
+  link(rel='stylesheet', href='/css/flickity.css', media='screen')
+  script(src='/js/vendor/flickity.pkgd.min.js')
+  script.
+    $(document).on('ready', function() {
+      setTimeout(function(){
+        var flickity_not_enabled = document.querySelector('.flickity-enabled') == null;
+        var elem = document.querySelector('.clients-gallery');
+        if (elem !== null) {
+          if (typeof Flickity != "undefined" && flickity_not_enabled) {
+            var flkty = new Flickity(elem);
+          }
+        }
+      }, 500);
+    })

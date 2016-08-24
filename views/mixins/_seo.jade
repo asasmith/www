@@ -4,44 +4,44 @@ mixin seo(title, description, page)
   if page
     case page
         when 'index'
-          title= contentful.meta[0].seoTitle 
-          meta(name='description', content= contentful.meta[0].seoDescription)
+          title= contentful.index[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.index[0].meta.fields.seoDescription)
         when 'blog'
-          title= contentful.meta[1].seoTitle 
-          meta(name='description', content= contentful.meta[1].seoDescription)
+          title= contentful.blog[0].meta.fields.seoTitle
+          meta(name='description', content= contentful.blog[0].meta.fields.seoDescription)
         when 'work'
-          title= contentful.meta[2].seoTitle 
-          meta(name='description', content= contentful.meta[2].seoDescription)
+          title= contentful.work[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.work[0].meta.fields.seoDescription)
         when 'about'
-          title= contentful.meta[3].seoTitle 
-          meta(name='description', content= contentful.meta[3].seoDescription)
+          title= contentful.about[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.about[0].meta.fields.seoDescription)
         when 'contact'
-          title= contentful.meta[4].seoTitle 
-          meta(name='description', content= contentful.meta[4].seoDescription)
+          title= contentful.contact[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.contact[0].meta.fields.seoDescription)
         when 'terms'
-          title= contentful.meta[5].seoTitle 
-          meta(name='description', content= contentful.meta[5].seoDescription)
+          title= contentful.terms[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.terms[0].meta.fields.seoDescription)
         when 'privacy'
-          title= contentful.meta[6].seoTitle 
-          meta(name='description', content= contentful.meta[6].seoDescription)
+          title= contentful.privacy[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.privacy[0].meta.fields.seoDescription)
         when 'animation'
-          title= contentful.meta[7].seoTitle 
-          meta(name='description', content= contentful.meta[7].seoDescription)
+          title= contentful.animation[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.animation[0].meta.fields.seoDescription)
         when 'culture'
-          title= contentful.meta[8].seoTitle 
-          meta(name='description', content= contentful.meta[8].seoDescription)
+          title= contentful.culture[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.culture[0].meta.fields.seoDescription)
         when 'gear'
-          title= contentful.meta[9].seoTitle 
-          meta(name='description', content= contentful.meta[9].seoDescription)
+          title= contentful.gear[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.gear[0].meta.fields.seoDescription)
         when 'method'
-          title= contentful.meta[10].seoTitle 
-          meta(name='description', content= contentful.meta[10].seoDescription)
+          title= contentful.method[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.method[0].meta.fields.seoDescription)
         when 'news'
-          title= contentful.meta[11].seoTitle 
-          meta(name='description', content= contentful.meta[11].seoDescription)
+          title= contentful.news[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.news[0].meta.fields.seoDescription)
         when 'road'
-          title= contentful.meta[12].seoTitle 
-          meta(name='description', content= contentful.meta[12].seoDescription)
+          title= contentful.road[0].meta.fields.seoTitle 
+          meta(name='description', content= contentful.road[0].meta.fields.seoDescription)
   else
     title= title
     meta(name='description', content= description)

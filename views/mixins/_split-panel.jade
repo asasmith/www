@@ -1,9 +1,9 @@
 mixin split-panel()
-  - var postTitle = contentful.news[0].title
-  - var postSubTitle = contentful.news[0].boxTitle
-  - var category = contentful.news[0].category.fields.title
-  - var permalink = contentful.news[0]._url.replace(/.html$/,"") 
-  - var panelImage = contentful.news[0].imageBox
+  - var postTitle = contentful.news_category[0].title
+  - var postSubTitle = contentful.news_category[0].boxTitle
+  - var category = contentful.news_category[0].category.fields.title
+  - var permalink = contentful.news_category[0]._url.replace(/.html$/,"") 
+  - var panelImage = contentful.news_category[0].imageBox
   .panel-common
     .panel-box-1-heading-img(style='background-image:url(#{asset(panelImage)})')
       a(href='/blog/#{category}')= category
