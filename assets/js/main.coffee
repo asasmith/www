@@ -43,6 +43,14 @@ ready = ->
       $el.css
         backgroundImage: "url('" + img + "')"
 
+  # responsive imgage hack for case study master images
+
+  $("#case-study [data-img-mobile]").each ->
+    $el = $(this)
+    img = $el.attr("data-img-mobile")
+    if $w.width() < 768 and img.length
+      $el.css
+        backgroundImage: "url('" + img + "')"
   # responsive image hack for case study bands
 
   $(".page-work-index [data-img-sm]").each ->
