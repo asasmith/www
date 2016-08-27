@@ -53,17 +53,17 @@ ready = ->
         backgroundImage: "url('" + img + "')"
   # responsive image hack for case study bands
 
-  $(".page-work-index [data-img-sm]").each ->
+  $("#work [data-img-sm]").each ->
     $el = $(this)
     img = $el.attr("data-img-sm")
     if $w.width() <= 320 and img.length
       $el.css
-        backgroundImage: "url('/img/work/" + img + "')"
+        backgroundImage: "url('" + img + "')"
 
-    $(".page-work-index [data-img-md]").each ->
+    $("#work [data-img-md]").each ->
       $el = $(this)
       img = $el.attr("data-img-md")
       if $w.width() >= 768 and $w.width() < 992 and img.length
         $el.css
-          backgroundImage: "url('/img/work/" + img + "')"
+          backgroundImage: "url('" + img + "')"
 $(document).ready(ready);
