@@ -7,14 +7,14 @@ include ../includes/_ie-conditional-comments
 +seo(entry.seoTitle, entry.seoDescription)
 include ../includes/_head
   
-  body(id='page-work-item')
+  body(id='case-study')
     .master-wrapper
       div(
         class='master parallax'
         data-img-mobile='{{ page.image-mobile }}'
         style='background-image:url(#{asset(entry.masterImage)})'
       )
-        +nav()
+        +nav('case-study')
         +header('yellow')
         include ../includes/_post-head-case-study 
     .content
