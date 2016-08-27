@@ -16,7 +16,7 @@ include ./includes/_head
         data-img-mobile='#{contentful.contact[0].masterImage.fields.file.url}'
         style='background-image:url(#{contentful.contact[0].masterImageSm.fields.file.url})'
       )
-        +nav()
+        +nav(page)
         +header('yellow')
         include ./includes/_page-head
     #content
