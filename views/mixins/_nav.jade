@@ -3,11 +3,26 @@ mixin nav(cur)
     .container
       ul.nav.navbar-nav
 
-        li
-          a(href='/work', rel='prefetch', class={active: cur == 'work'}) Work
-        li
-          a(href='/blog', rel='prefetch', class={active: cur == 'blog'}) Blog
-        li
-          a(href='/about', rel='prefetch', class={active: cur == 'about'}) About
-        li
-          a(href='/contact', rel='prefetch', class={active: cur == 'contact'}) Contact
+        li(
+          class={active: cur == 'work' ||
+                         cur == 'case-study' ||
+                         cur == 'video'}
+          )
+          a(href='/work', rel='prefetch') Work
+        li(
+          class={active: cur == 'blog' ||
+                         cur == 'animation' ||
+                         cur == 'culture' ||
+                         cur == 'gear' ||
+                         cur == 'method' ||
+                         cur == 'news' ||
+                         cur == 'road'}
+          )
+          a(href='/blog', rel='prefetch') Blog
+        li(class={active: cur == 'about'})
+          a(href='/about', rel='prefetch') About
+        li(
+          class={active: cur == 'contact' ||
+                         cur == 'thanks'}
+          )
+          a(href='/contact', rel='prefetch') Contact
