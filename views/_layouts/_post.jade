@@ -13,7 +13,7 @@ include ../includes/_head
     .master-wrapper
       div(
         class='master parallax'
-        data-img-mobile='{{ page.image-mobile }}'
+        data-img-mobile='#{asset(entry.imageMobile)}'
         style='background-image:url(#{asset(entry.image)})'
       )
         +nav()
