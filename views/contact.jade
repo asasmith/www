@@ -41,19 +41,19 @@ include ./includes/_head
                 a(href='mailto:info@earlylightmedia.com', itemprop='email') info@earlylightmedia.com
             h3 Let's talk.
             form(action='//formspree.io/info@earlylightmedia.com', method='POST', autocomplete='on')
-            .form-group
-              label.sr-only(for='name') Name
-              input.form-control(type='text', name='Name', placeholder='Your Name', required)
-            .form-group
-              label.sr-only(for='email') Email
-              input.form-control(type='email', name='Email', input='email', placeholder='Your Email', required)
-            .form-group
-              label.sr-only(for='message') How can we help?
-              textarea.form-control(rows='5', name='Message', placeholder='How can we help?', required)
-            button.btn.btn-default(type='submit') Send
-            input(type='text', name='_gotcha', style='display:none')
-            input(type='hidden', name='_subject', value='New Website Inquiry')
-            input(type='hidden', name='_next', value='/contact/thanks')
+              .form-group
+                label.sr-only(for='name') Name
+                input.form-control(type='text', name='Name', placeholder='Your Name', required)
+              .form-group
+                label.sr-only(for='email') Email
+                input.form-control(type='email', name='Email', input='email', placeholder='Your Email', required)
+              .form-group
+                label.sr-only(for='message') How can we help?
+                textarea.form-control(rows='5', name='Message', placeholder='How can we help?', required)
+              button.btn.btn-default(type='submit') Send
+              input(type='text', name='_gotcha', style='display:none')
+              input(type='hidden', name='_subject', value='New Website Inquiry')
+              input(type='hidden', name='_next', value='/contact/thanks')
             br.visible-sm.visible-xs
             br.visible-sm.visible-xs
           .col-md-8.col-md-pull-4.col-sm-12.col-xs-12
