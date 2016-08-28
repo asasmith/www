@@ -1,0 +1,30 @@
+- var page = helpers.getPageName(_path)
+include ./mixins/_seo
+include ./mixins/_nav
+include ./mixins/_header
+include ./mixins/_split-panel
+include ./mixins/_img-panel
+include ./mixins/_color-panel
+
+doctype html
+include ./includes/_ie-conditional-comments
++seo(title, description, page)
+include ./includes/_head
+  
+  body(id='p' + page)
+    +nav()
+    +header('white')
+    .container
+      .panel-thanks
+        span.panel-master-heading 404
+        .panel-master-body
+          h1 Sorry, page not found!
+          p Looks like you've followed a broken link or entered a URL that <strong>doesn't exist on this site.</strong>
+      .row-post-list
+        .col-md-6
+          +img-panel('method')
+        .col-md-6
+          +img-panel('gear')
+    .container
+      include ./includes/_footer
+  include ./includes/_social-icons.svg
