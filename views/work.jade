@@ -24,8 +24,8 @@ include ./includes/_head
               .case-study-master.work-item.case-study(
                 data-href='work/#{p.isCaseStudy.fields.permalink}'
                 data-category='case-study'
-                data-img-sm= p.isCaseStudy.fields.bandImageSm.fields.file.fileName
-                data-img-md= p.isCaseStudy.fields.bandImageMd.fields.file.fileName
+                data-img-sm='#{p.isCaseStudy.fields.bandImageSm.fields.file.url}'
+                data-img-md='#{p.isCaseStudy.fields.bandImageMd.fields.file.url}'
                 style='background-image:url(#{p.isCaseStudy.fields.bandImage.fields.file.url})'
               )
                 .case-study-panel

@@ -11,7 +11,7 @@ include ../includes/_head
     .master-wrapper
       div(
         class='master parallax'
-        data-img-mobile='{{ page.image-mobile }}'
+        data-img-mobile='#{asset(entry.masterImageSm)}'
         style='background-image:url(#{asset(entry.masterImage)})'
       )
         +nav('case-study')
