@@ -1,0 +1,54 @@
+- var page = helpers.getPageName(_path)
+include ./mixins/_seo
+include ./mixins/_nav
+include ./mixins/_header
+include ./mixins/_split-panel
+include ./mixins/_img-panel
+include ./mixins/_color-panel
+
+doctype html
+include ./includes/_ie-conditional-comments
++seo(title, description, page)
+include ./includes/_head
+  
+  body(id= page)
+    +nav()
+    +header('white')
+    .container
+      .panel-thanks
+        span.panel-master-heading Email Newsletter
+        .panel-master-body
+          form(action='//earlylightmedia.us7.list-manage.com/subscribe/post?u=a881a849744ae3b26baccdede&amp;id=68b375c3d7',
+               method='post',
+               id='mc-embedded-subscribe-form',
+               name='mc-embedded-subscribe-form',
+               class='form-inline',
+               target='_blank',
+               novalidate)
+                 .form-group
+                   input(type='email',
+                      value='',
+                      name='EMAIL',
+                      class='form-control',
+                      id='mce-EMAIL',
+                      placeholder='email address',
+                      required)
+                   input(type='text',
+                      name='b_a881a849744ae3b26baccdede_68b375c3d7',
+                      tabindex='-1',
+                      value='',
+                      aria-hidden='true',
+                      class='hidden')
+                   input(type='submit',
+                       value='Subscribe',
+                       name='subscribe',
+                       id='mc-embedded-subscribe',
+                       class='btn btn-default')
+      .row-post-list
+        .col-md-6
+          +img-panel('method')
+        .col-md-6
+          +img-panel('gear')
+    .container
+      include ./includes/_footer
+  include ./includes/_social-icons.svg
