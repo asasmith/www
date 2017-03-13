@@ -41,6 +41,12 @@ module.exports =
                 'sys.id': '55jkHpoleoWqwkMGMYucWC'
                }
       write: 'data/page/contact.json'
+    newsletter:
+      id: 'page'
+      filters: {
+                'sys.id': '1uyQEaD7eIEeIMOUo0go4K'
+               }
+      write: 'data/page/newsletter.json'
     terms:
       id: 'page'
       filters: {

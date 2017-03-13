@@ -1,0 +1,21 @@
+#newsletter {
+  .panel-master-body {
+    font: 400 1em/1.5 $font-family-base;
+  }
+
+  form {
+    margin-top: 2em;
+  }
+
+  @media (min-width: 768px) {
+    .form-inline .form-control {
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .form-inline .form-group {
+      width: 75%
+    }
+  }
+}

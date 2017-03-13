@@ -16,8 +16,12 @@ include ./includes/_head
     +header('white')
     .container
       .panel-thanks
-        span.panel-master-heading Email Newsletter
+        span.panel-master-heading= contentful.newsletter[0].block[0].fields.title
         .panel-master-body
+          if contentful.newsletter[0].block[0].fields.body
+            != marked(contentful.newsletter[0].block[0].fields.body)
+          else
+            | No block body!
           form(action='//earlylightmedia.us7.list-manage.com/subscribe/post?u=a881a849744ae3b26baccdede&amp;id=68b375c3d7',
                method='post',
                id='mc-embedded-subscribe-form',
