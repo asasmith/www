@@ -108,6 +108,17 @@ include ./includes/_head
             .row.profile
               .col-md-4
                 img(
+                  src='#{contentful.about[0].team[4].fields.memberImage.fields.file.url}'
+                  alt= contentful.about[0].team[4].fields.memberName
+                  )
+              .col-md-8
+                h2.name= contentful.about[0].team[4].fields.memberName
+                h3.title= contentful.about[0].team[4].fields.memberJobTitle
+                p.text!= marked(contentful.about[0].team[4].fields.memberBio)
+
+            .row.profile
+              .col-md-4
+                img(
                   src='#{contentful.about[0].team[5].fields.memberImage.fields.file.url}'
                   alt= contentful.about[0].team[5].fields.memberName
                   )
