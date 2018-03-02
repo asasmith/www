@@ -61,71 +61,14 @@ include ./includes/_head
         .row
           .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
             h1.head Meet the Team
-            .row.profile
-              .col-md-4
-                img(
-                  src='#{contentful.about[0].team[0].fields.memberImage.fields.file.url}'
-                  alt= contentful.about[0].team[0].fields.memberName
-                  )
-              .col-md-8
-                h2.name= contentful.about[0].team[0].fields.memberName
-                h3.title= contentful.about[0].team[0].fields.memberJobTitle
-                p.text!= marked(contentful.about[0].team[0].fields.memberBio)
-
-            .row.profile
-              .col-md-4
-                img(
-                  src='#{contentful.about[0].team[1].fields.memberImage.fields.file.url}'
-                  alt= contentful.about[0].team[1].fields.memberName
-                  )
-              .col-md-8
-                h2.name= contentful.about[0].team[1].fields.memberName
-                h3.title= contentful.about[0].team[1].fields.memberJobTitle
-                p.text!= marked(contentful.about[0].team[1].fields.memberBio)
-
-            .row.profile
-              .col-md-4
-                img(
-                  src='#{contentful.about[0].team[2].fields.memberImage.fields.file.url}'
-                  alt= contentful.about[0].team[2].fields.memberName
-                  )
-              .col-md-8
-                h2.name= contentful.about[0].team[2].fields.memberName
-                h3.title= contentful.about[0].team[2].fields.memberJobTitle
-                p.text!= marked(contentful.about[0].team[2].fields.memberBio)
-
-            .row.profile
-              .col-md-4
-                img(
-                  src='#{contentful.about[0].team[3].fields.memberImage.fields.file.url}'
-                  alt= contentful.about[0].team[3].fields.memberName
-                  )
-              .col-md-8
-                h2.name= contentful.about[0].team[3].fields.memberName
-                h3.title= contentful.about[0].team[3].fields.memberJobTitle
-                p.text!= marked(contentful.about[0].team[3].fields.memberBio)
-
-            .row.profile
-              .col-md-4
-                img(
-                  src='#{contentful.about[0].team[4].fields.memberImage.fields.file.url}'
-                  alt= contentful.about[0].team[4].fields.memberName
-                  )
-              .col-md-8
-                h2.name= contentful.about[0].team[4].fields.memberName
-                h3.title= contentful.about[0].team[4].fields.memberJobTitle
-                p.text!= marked(contentful.about[0].team[4].fields.memberBio)
-
-            .row.profile
-              .col-md-4
-                img(
-                  src='#{contentful.about[0].team[5].fields.memberImage.fields.file.url}'
-                  alt= contentful.about[0].team[5].fields.memberName
-                  )
-              .col-md-8
-                h2.name= contentful.about[0].team[5].fields.memberName
-                h3.title= contentful.about[0].team[5].fields.memberJobTitle
-                p.text!= marked(contentful.about[0].team[5].fields.memberBio)
+            - for members, i in contentful.team
+              .row.profile
+                .col-md-4 
+                  img(src='#{contentful.about[0].team[i].fields.memberImage.fields.file.url}' alt= contentful.about[0].team[i].fields.memberName)
+                .col-md-8
+                  h2.name= contentful.about[0].team[i].fields.memberName
+                  h3.title= contentful.about[0].team[i].fields.memberJobTitle
+                  p.text!= marked(contentful.about[0].team[i].fields.memberBio)
 
     .container
       include ./includes/_footer
