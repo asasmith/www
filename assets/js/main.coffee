@@ -1,9 +1,5 @@
 ready = ->
 
-  # hide webby roadblock on extra small devices (<768px)
-  $noroadblock = "hidden-xs"
-  $("#webby-pv-2014-roadblock").addClass $noroadblock
-
   $(".nav-toggle").on "click", ->
     $el = $(this)
     $nav = $("#navbar")
