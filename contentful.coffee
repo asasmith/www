@@ -1,8 +1,10 @@
 transform = require './helpers/transform'
 
 module.exports = 
-  access_token: process.env.CONTENTFUL_API_KEY
-  management_token: process.env.CONTENTFUL_MAN_KEY
+  access_token: 'c85247f6e8b998c98f90106f61fc6a42c7a220468ed9de60eed1181eb3ce186f'
+  # access_token: process.env.CONTENTFUL_API_KEY
+  management_token: 'CFPAT-b1144483e06d8f843be04ff6a7d1364481eadfe698f7b3d7fed4a6f9ee604b9e'
+  # management_token: process.env.CONTENTFUL_MAN_KEY
   space_id: '1ipf5oqx1rxu'
   content_types:
     page:

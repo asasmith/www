@@ -135,6 +135,10 @@ a.category {
   }
 }
 
+section {
+  margin-bottom: 15vh;
+}
+
 .panel-master {
   min-height: 400px;
   color: $brand-secondary-white;
@@ -204,3 +208,13 @@ a.category {
   font-style: italic;
 }
 
+&.flex {
+  display: flex;
+}
+
+&.flex-wrapper {
+  display: flex;
+  margin: auto;
+  max-width: 1300px;
+  width: 80%;
+}
