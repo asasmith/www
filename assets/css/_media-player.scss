@@ -1,0 +1,64 @@
+#media-player {
+  background-color: rgba(0, 0, 0, .8);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  &.is-hidden {
+    display: none
+  }
+}
+
+.media-player__wrapper {
+  display: block;
+  left: 50%;
+  max-width: 1280px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 90%;
+}
+
+.media-player__btn-close {
+  background-color: $brand-primary-black;
+  border: 1px solid $brand-secondary-white;
+  border-radius: 50%;
+  display: block;
+  height: 4rem;
+  left: 0;
+  position: absolute;
+  top: -4rem;
+  width: 4rem;
+
+  &:after {
+    color: $brand-secondary-white;
+    content: 'X';
+    font-size: 2rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.media-player__panel {
+  position: relative;
+  height: 60vh;
+
+  &:after {
+    content: '';
+    height: 0;
+    width: 1px;
+    padding-bottom: calc(100% / (16/9)); // maintains panel's aspect ratio
+}
+
+  & iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
