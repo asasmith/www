@@ -24,8 +24,8 @@
   .page-wrapper {
     min-height: 490%;
 
-    @media only screen and (max-width: 475px) {
-      min-height: 650%;
+    @media only screen and (max-width: 600px) {
+      min-height: 700vh;
     }
 
     .container {
