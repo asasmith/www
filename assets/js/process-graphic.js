@@ -63,13 +63,13 @@ function process (e) {
   })
 }
 
-window.addEventListener('load', function () {
-  const screenWidth = checkWidth()
+// window.addEventListener('load', function () {
+//   const screenWidth = checkWidth()
 
-  if (screenWidth < 999) {
-    setInterval(change, 5000)
-  }
-})
+//   if (screenWidth < 999) {
+//     setInterval(change, 5000)
+//   }
+// })
 
 function stopInt (func) {
   clearInterval(func)
