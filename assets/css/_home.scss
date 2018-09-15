@@ -9,45 +9,53 @@
 
     &.navbar {
 
-      .container {
-        padding-left: 110px;
+      @media only screen and (min-width: 500px) {
+        .container {
+          padding-left: 110px;
+        }
       }
     }
   }
 
   .site-header {
 
+    .container {
+
+      @media only screen and (max-width: 600px) {
+        width: 90%;
+      }
+    }
+
     @media screen and (min-width: 1280px) {
       padding-left: 15%;
     }
   }
   
-  .page-wrapper {
-    min-height: 490%;
+  // .page-wrapper {
+  //   min-height: 490%;
 
-    @media only screen and (max-width: 600px) {
-      min-height: 700vh;
-    }
+  //   @media only screen and (max-width: 600px) {
+  //     min-height: 700vh;
+  //   }
 
-    @media only screen and (min-width: 1280px) and (max-width: 1380px) {
-      min-height: 530vh;
-    }
+  //   @media only screen and (min-width: 1280px) and (max-width: 1380px) {
+  //     min-height: 530vh;
+  //   }
 
-    @media only screen and (min-width: 2000px) {
-      min-height: 510vh;
-    }
+  //   @media only screen and (min-width: 2000px) {
+  //     min-height: 510vh;
+  //   }
 
-    @media only screen and (min-width: 2300px) {
-      min-height: 515vh;
-    }
+  //   @media only screen and (min-width: 2300px) {
+  //     min-height: 515vh;
+  //   }
 
-    .container {
-      padding: 0 1rem;
-    }
-  }
+  //   .container {
+  //     padding: 0 1rem;
+  //   }
+  // }
 
   .content-wrapper {
-    position: absolute;
     display: table;
     height: 100%;
     width: 100%;
@@ -61,7 +69,7 @@
     text-align: center;
 
     @media screen and (max-width: 480px) {
-      padding-top: 14rem;
+      padding-top: 8rem;
     }
 
     h1 {
@@ -133,8 +141,6 @@ main {
   background-color: $brand-secondary-white;
   color: $brand-primary-black;
   padding-bottom: 1rem;
-  position: relative;
-  top: 80vh;
 
   .media-gallery__grid-wrap {
     display: grid;
@@ -159,7 +165,7 @@ main {
 
   .media-gallery__h2 {
     margin: 1rem auto;
-    padding-top: 8rem;
+    // padding-top: 8rem;
   }
 
   .media-gallery__copy {
