@@ -246,7 +246,7 @@ main {
     }
 
     &:nth-of-type(2) {
-      background: url("//images.ctfassets.net/1ipf5oqx1rxu/5FOSwN7Y760UuIKM08ckcQ/2cd5547d525b105df2de9d34b2d1329a/Zach_thumb.jpg") no-repeat center center;
+      background: url("/img/microsoft.jpg") no-repeat center center;
       background-size: cover;
     }
 
@@ -261,12 +261,12 @@ main {
     }
 
     &:nth-of-type(5) {
-      background: url('//images.ctfassets.net/1ipf5oqx1rxu/6mcCKE5aA80KG8skw42oEe/c70cc1dd5998cb91315498d6b0fb67c3/THUMBNAIL.jpg');
+      background: url('/img/throw-trailer.jpg');
       background-size: cover;
     }
 
     &:nth-of-type(6) {
-      background: url('//images.ctfassets.net/1ipf5oqx1rxu/pvs6CACYcoG8iMCAau4cG/a1e0e831b31c86ae5d044084d2c55a9c/post-audi-dcu-box.png');
+      background: url('/img/rooney-reveal.jpg');
       background-size: cover;
     }
   }
