@@ -20,6 +20,9 @@ module.exports =
     featVideo: 
       id: 'featuredVideoSection'
       write: 'data/featVid.json'
+    homepageClientList: 
+      id: 'homepageClientList'
+      write: 'data/hpClientList.json'
     blog:
       id: 'page'
       filters: {
