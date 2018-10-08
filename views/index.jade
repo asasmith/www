@@ -44,12 +44,12 @@ block content
         .award-panel.flex
           // figure.award-panel__figure
           img.award-panel__img(src='/img/Emmy-Award-Stencil-thumb.png')
-          p.h1.award-panel__counter(data-total='51') 51
+          p.h1.award-panel__counter(data-total='#{contentful.index[0].awards[0].fields.quantity}')= contentful.index[0].awards[0].fields.quantity
 
         .award-panel.flex
           // figure.award-panel__figure
           img.award-panel__img(src='/img/addy-black.png')
-          p.h1.award-panel__counter(data-total='8') 8
+          p.h1.award-panel__counter(data-total='#{contentful.index[0].awards[1].fields.quantity}')= contentful.index[0].awards[1].fields.quantity
 
     section.process
 
