@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 css_pipeline = require 'css-pipeline'
 js_pipeline  = require 'js-pipeline'
 contentful   = require 'roots-contentful'

@@ -28,39 +28,16 @@ block content
           iframe(id='iframe' src='' allowfullscreen='allowfullscreen')
 
     section.media-gallery
-      h2.h1.media-gallery__h2 Inspiring people through film is our super power
-      p.media-gallery__copy Our Documentary Style Paired With Earth-Shaking Brands Creates Emotional Attachment, A Recipe For Deep Impact 
+      h2.h1.media-gallery__h2= contentful.featVideo[0].heroTitle
+      p.media-gallery__copy= contentful.featVideo[0].copy 
       .media-gallery__grid-wrap
 
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='216914992')
-            h3.panel__title Annie E. Casey Foundation
-            h3.panel__title.panel__title--secondary De'Jon's Story
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='223662141')
-            h3.panel__title Microsoft
-            h3.panel__title.panel__title--secondary TV White Spaces
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='187359744')
-            h3.panel__title Severn School
-            h3.panel__title.panel__title--secondary We Are Severn
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='144040577')
-            h3.panel__title Loyola University
-            h3.panel__title.panel__title--secondary Strong Truths Well Lived
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='184009588')
-            h3.panel__title Throw
-            h3.panel__title.panel__title--secondary feat. Coffin Nachtmahr
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='278196574')
-            h3.panel__title D.C. United
-            h3.panel__title.panel__title--secondary A Legendary Reveal
+        - for video, i in contentful.featVideo[0].featuredVideo
+          
+          .media-gallery__panel(style='background-image: url(#{contentful.featVideo[0].featuredVideo[i].fields.backgroundImage.fields.file.url})')
+            .panel__anchor(data-vimeo='#{contentful.featVideo[0].featuredVideo[i].fields.vimeoId}')
+              h3.panel__title= contentful.featVideo[0].featuredVideo[i].fields.title 
+              h3.panel__title.panel__title--secondary= contentful.featVideo[0].featuredVideo[i].fields.copy
 
     section.awards.flex
       .awards__flex-wrapper.flex-wrapper
@@ -68,7 +45,6 @@ block content
           // figure.award-panel__figure
           img.award-panel__img(src='/img/Emmy-Award-Stencil-thumb.png')
           p.h1.award-panel__counter(data-total='51') 51
-
 
         .award-panel.flex
           // figure.award-panel__figure
