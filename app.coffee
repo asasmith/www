@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({silent: true})
 
 css_pipeline = require 'css-pipeline'
 js_pipeline  = require 'js-pipeline'
