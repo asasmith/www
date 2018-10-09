@@ -1,5 +1,12 @@
 const processGraphicQuads = document.querySelectorAll('.process__graphic .cls-1')
 const processPanel = document.querySelectorAll('.process__panel')
+const panel3 = document.querySelector('.process__panel[data-order="2"]')
+const panel4 = document.querySelector('.process__panel[data-order="3"]')
+
+window.addEventListener('load', function () {
+  panel3.dataset.order = 3
+  panel4.dataset.order = 2
+})
 
 processGraphicQuads.forEach(function (item) {
   item.addEventListener('click', function () {

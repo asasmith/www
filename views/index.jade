@@ -28,57 +28,32 @@ block content
           iframe(id='iframe' src='' allowfullscreen='allowfullscreen')
 
     section.media-gallery
-      h2.h1.media-gallery__h2 Inspiring people through film is our super power
-      p.media-gallery__copy Our Documentary Style Paired With Earth-Shaking Brands Creates Emotional Attachment, A Recipe For Deep Impact 
+      h2.h1.media-gallery__h2= contentful.featVideo[0].heroTitle
+      p.media-gallery__copy= contentful.featVideo[0].copy 
       .media-gallery__grid-wrap
 
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='216914992')
-            h3.panel__title Annie E. Casey Foundation
-            h3.panel__title.panel__title--secondary De'Jon's Story
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='223662141')
-            h3.panel__title Microsoft
-            h3.panel__title.panel__title--secondary TV White Spaces
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='187359744')
-            h3.panel__title Severn School
-            h3.panel__title.panel__title--secondary We Are Severn
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='144040577')
-            h3.panel__title Loyola University
-            h3.panel__title.panel__title--secondary Strong Truths Well Lived
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='184009588')
-            h3.panel__title Throw
-            h3.panel__title.panel__title--secondary feat. Coffin Nachtmahr
-
-        .media-gallery__panel
-          .panel__anchor(data-vimeo='278196574')
-            h3.panel__title D.C. United
-            h3.panel__title.panel__title--secondary A Legendary Reveal
+        - for video, i in contentful.featVideo[0].featuredVideo
+          
+          .media-gallery__panel(style='background-image: url(#{contentful.featVideo[0].featuredVideo[i].fields.backgroundImage.fields.file.url})')
+            .panel__anchor(data-vimeo='#{contentful.featVideo[0].featuredVideo[i].fields.vimeoId}')
+              h3.panel__title= contentful.featVideo[0].featuredVideo[i].fields.title 
+              h3.panel__title.panel__title--secondary= contentful.featVideo[0].featuredVideo[i].fields.copy
 
     section.awards.flex
       .awards__flex-wrapper.flex-wrapper
         .award-panel.flex
           // figure.award-panel__figure
           img.award-panel__img(src='/img/Emmy-Award-Stencil-thumb.png')
-          p.h1.award-panel__counter(data-total='51') 51
-
+          p.h1.award-panel__counter(data-total='#{contentful.index[0].awards[0].fields.quantity}')= contentful.index[0].awards[0].fields.quantity
 
         .award-panel.flex
           // figure.award-panel__figure
           img.award-panel__img(src='/img/addy-black.png')
-          p.h1.award-panel__counter(data-total='8') 8
+          p.h1.award-panel__counter(data-total='#{contentful.index[0].awards[1].fields.quantity}')= contentful.index[0].awards[1].fields.quantity
 
     section.process
 
-      h2.h1.process__h2 Global team or local agency, we'll build your story together
-
+      h2.h1.process__h2= contentful.index[0].homepageQuadrant.fields.title
 
       .process__grid-wrapper.flex-wrapper
 
@@ -95,74 +70,66 @@ block content
           svg.process-quad(data-order='2' id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196.93 196.93")
             title elm-process-quad
             path.cls-1(d="M32.92,196.93a184,184,0,0,1,164-161.77V0C92.32,9,9,92.32,0,196.93Z")
-          // include(src='/includes/_elm-process-quad.sgr' data-order='0')
-          // include(src='/includes/_elm-process-quad.sgr' data-order='1')
-          // include(src='/includes/_elm-process-quad.sgr' data-order='2')
-          // include(src='/includes/_elm-process-quad.sgr' data-order='3')
-          // include(src='/includes/_elm-process-circle.sgr')
 
-        .process__panel(data-order='0')
-          h3.h3.process__panel-header Ad Agencies
-          p.process__panel-content Your ideas, our execution. We’ll develop a detailed treatment on how to best execute your vision through a highly collaborative process.
+        - for item, i in contentful.index[0].homepageQuadrant.fields.quadrantItem
 
-        .process__panel(data-order='1')
-          h3.h3.process__panel-header Direct to Business
-          p.process__panel-content Content strategy and creative treatments for teams who build their brands in house, but sometimes need to bring in the experts to get more done.
-
-        .process__panel(data-order='3')
-          h3.h3.process__panel-header Non-Profit World
-          p.process__panel-content We help the world’s do-gooders do good, working within the constraints of the public sector to tell the world’s most heartfelt and compelling stories.
-
-        .process__panel(data-order='2')
-          h3.h3.process__panel-header Editorial
-          p.process__panel-content We work with investors, journalism outlets, and independent teams to tell stories that are impactful, balanced, and people-driven.
+          .process__panel(data-order=i)
+            h3.h3.process__panel-header= contentful.index[0].homepageQuadrant.fields.quadrantItem[i].fields.title
+            p.process__panel-content= contentful.index[0].homepageQuadrant.fields.quadrantItem[i].fields.body
 
     section.clients
-      h2.clients__header Friends of ELM
+      h2.clients__header= contentful.homepageClientList[0].hero 
 
       .clients__flex-wrapper
-        .clients__figure
-          img(src='/img/client-logos/Microsoft-logo_rgb_c-grey-140.png')
-        .clients__figure
-          img(src='/img/client-logos/MCCANN-grey-90.jpg')
-        .clients__figure
-          img(src='/img/client-logos/UA-grey-128.png')
-        .clients__figure
-          img(src='/img/client-logos/audi-cars-logo-emblem-grey-120.jpg')
-        .clients__figure
-          img(src='/img/client-logos/AECF-grey-128.jpg')
-        .clients__figure
-          img(src='/img/client-logos/JHU-grey-134.png')
-        .clients__figure
-          img(src='/img/client-logos/NG-grey-140.png')
-        .clients__figure
-          img(src='/img/client-logos/DISCOVERY-CHANNEL-grey-140.png')
-        .clients__figure
-          img(src='/img/client-logos/primary-signature-grey-90.jpg')
-        .clients__figure
-          img(src='/img/client-logos/UMMC-grey-140.png')
-        .clients__figure
-          img(src='/img/client-logos/usnaaa-logo-200x200-grey.png')
-        .clients__figure
-          img(src='/img/client-logos/Visit_Baltimore_Logo_Vertical-grey-120.png')
-        .clients__figure
-          img(src='/img/client-logos/WEINBERG-Logo-Stacked.png')
-        .clients__figure
-          img(src='/img/client-logos/aspire-logo-inverse-grey-128.png')
-        .clients__figure
-          img(src='/img/client-logos/ASTRA-ZENECA-grey-140.png')
-        .clients__figure
-          img(src='/img/client-logos/Best-grey-100.png')
-        // .clients__figure
-          // img(src='/img/client-logos/BOSTON-CHILDRENS-HOSPITAL-.png')
-        .clients__figure
-          img(src='/img/client-logos/CAPE-COD-grey-100.jpg')
-        .clients__figure
-          img(src='/img/client-logos/DCU-grey-80.png')
-        .clients__figure
-          img(src='/img/client-logos/gkv_2012_logo-grey-87.png')
-        .clients__figure
-          img(src='/img/client-logos/PANDORA-grey-140.png')
+
+        - for client, i in contentful.homepageClientList[0].clients
+
+          .clients__figure
+            img(src='#{contentful.homepageClientList[0].clients[i].fields.homepageLogo.fields.file.url}')
+
+
+        //- .clients__figure
+        //-   img(src='/img/client-logos/Microsoft-logo_rgb_c-grey-140.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/MCCANN-grey-90.jpg')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/UA-grey-128.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/audi-cars-logo-emblem-grey-120.jpg')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/AECF-grey-128.jpg')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/JHU-grey-134.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/NG-grey-140.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/DISCOVERY-CHANNEL-grey-140.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/primary-signature-grey-90.jpg')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/UMMC-grey-140.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/usnaaa-logo-200x200-grey.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/Visit_Baltimore_Logo_Vertical-grey-120.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/WEINBERG-Logo-Stacked.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/aspire-logo-inverse-grey-128.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/ASTRA-ZENECA-grey-140.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/Best-grey-100.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/BOSTON-CHILDRENS-HOSPITAL-.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/CAPE-COD-grey-100.jpg')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/DCU-grey-80.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/gkv_2012_logo-grey-87.png')
+        //- .clients__figure
+        //-   img(src='/img/client-logos/PANDORA-grey-140.png')
 
     section.contact
       .contact__hero
