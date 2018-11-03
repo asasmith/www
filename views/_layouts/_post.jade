@@ -5,7 +5,7 @@ include ../mixins/_post-body
 
 doctype html
 include ../includes/_ie-conditional-comments
-+seo(entry.seoTitle, entry.seoDescription)
++seo(entry.seoTitle, entry.seoDescription, entry.image.fields.file.url, entry.image.fields.file.details.image.width, entry.image.fields.file.details.image.height)
 include ../includes/_head
   
   body(id='post')
@@ -15,6 +15,7 @@ include ../includes/_head
         class='master parallax'
         data-img-mobile='#{asset(entry.imageMobile)}'
         style='background-image:url(#{asset(entry.image)})'
+        data-test= (entry.image.fields.file)
       )
         +nav()
         +header('yellow')
@@ -28,4 +29,3 @@ include ../includes/_head
     .container
       include ../includes/_footer
   include ../includes/_social-icons.svg
-  

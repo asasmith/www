@@ -1,50 +1,167 @@
 // it ain't pretty, but has to do for now
 
-mixin seo(title, description, page)
+mixin seo(title, description, img, imgWidth, imgHeight, page)
   if page
     case page
         when 'index'
           title= contentful.index[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.index[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.index[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.index[0].meta.fields.seoDescription)
+          if (contentful.index[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.index[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.index[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.index[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'blog'
           title= contentful.blog[0].meta.fields.seoTitle
           meta(name='description', content= contentful.blog[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.blog[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.blog[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.blog[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.blog[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.blog[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'work'
           title= contentful.work[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.work[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.work[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.work[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.work[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.work[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.work[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'about'
           title= contentful.about[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.about[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.about[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.about[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.about[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.about[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.about[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'contact'
           title= contentful.contact[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.contact[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.contact[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.contact[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.contact[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.contact[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.contact[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'terms'
           title= contentful.terms[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.terms[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.terms[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.terms[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.terms[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.terms[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.terms[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'privacy'
           title= contentful.privacy[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.privacy[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.privacy[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.privacy[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.privacy[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.privacy[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.privacy[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'animation'
           title= contentful.animation[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.animation[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.animation[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.animation[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.animation[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.animation[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.animation[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'culture'
           title= contentful.culture[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.culture[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.culture[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.culture[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.culture[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.culture[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.culture[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'gear'
           title= contentful.gear[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.gear[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.gear[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.gear[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.gear[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.gear[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.gear[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'method'
           title= contentful.method[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.method[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.method[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.method[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.method[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.method[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.method[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'news'
           title= contentful.news[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.news[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.news[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.news[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.news[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.news[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.news[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'road'
           title= contentful.road[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.road[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.road[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.road[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.road[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.road[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.road[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
         when 'thanks'
           title= contentful.thanks[0].meta.fields.seoTitle 
           meta(name='description', content= contentful.thanks[0].meta.fields.seoDescription)
+          meta(property='og:title' content= contentful.thanks[0].meta.fields.seoTitle)
+          meta(property='og:description', content= contentful.thanks[0].meta.fields.seoDescription)
+          if (contentful.blog[0].meta.fields.seoImage)
+            meta(property='og:image' content= contentful.thanks[0].meta.fields.seoImage.fields.file.url)
+            meta(property='og:image:width' content= contentful.thanks[0].meta.fields.seoImage.fields.file.details.image.width)
+            meta(property='og:image:height' content= contentful.thanks[0].meta.fields.seoImage.fields.file.details.image.height)
+          else
+            meta(property='og:image' content='/img/elm-logo-yellow.svg')
   else
     title= title
     meta(name='description', content= description)
+    meta(property='og:title' content= title)
+    meta(property='og:description', content= description)
+    meta(property='og:image' content= img)
+    meta(property='og:image:width' content= imgWidth)
+    meta(property='og:image:height' content= imgHeight)
