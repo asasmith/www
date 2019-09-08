@@ -4,7 +4,8 @@ block content
   .container.content-wrapper
     .content
       h1= contentful.index[0].hero[0].fields.title
-      a(href='/#{contentful.index[0].cta[0].fields.slug}', class='btn-link')= contentful.index[0].cta[0].fields.title
+      if contentful.index[0].cta[0].fields
+        a(href='/#{contentful.index[0].cta[0].fields.slug}' class='btn-link')= contentful.index[0].cta[0].fields.title
       .bgvid-wrapper
         video(
           autoplay
