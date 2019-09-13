@@ -56,4 +56,4 @@ module.exports =
   server:
     clean_urls: true
 
-  open_browser: false
+  open_browser: true
