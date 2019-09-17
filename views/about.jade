@@ -2,6 +2,7 @@
 include ./mixins/_seo
 include ./mixins/_nav
 include ./mixins/_header
+include ./mixins/_page-hero
 include ./mixins/_post-body
 
 doctype html
@@ -19,7 +20,8 @@ include ./includes/_head
       )
         +nav(page)
         +header('yellow')
-        include ./includes/_page-head
+        +pageHero('about')
+
     #content
       .container
         .row
