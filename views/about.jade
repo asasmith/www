@@ -30,35 +30,7 @@ include ./includes/_head
               != marked(contentful.about[0].block[0].fields.body)
             else
               | No block body!
-      .testimonial
-        .container
-          .row
-            .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-              h1= contentful.about[0].testimonial[0].fields.body
-              h2= contentful.about[0].testimonial[0].fields.attribution
-      .container.clients
-        .row
-          .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-            h1.head Our Clients
-            .clients-gallery
-              .gallery-cell
-                .row
-                  img(src='#{contentful.about[0].slider[0].fields.firstSlide.fields.file.url}', alt='Slide 1')
-              .gallery-cell
-                .row
-                  img(src='#{contentful.about[0].slider[0].fields.secondSlide.fields.file.url}', alt='Slide 2')
-              .gallery-cell
-                .row
-                  img(src='#{contentful.about[0].slider[0].fields.thirdSlide.fields.file.url}', alt='Slide 3')
-              .gallery-cell
-                .row
-                  img(src='#{contentful.about[0].slider[0].fields.fourthSlide.fields.file.url}', alt='Slide 4')
-      .testimonial
-        .container
-          .row
-            .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-              h1= contentful.about[0].testimonial[1].fields.body
-              h2= contentful.about[0].testimonial[1].fields.attribution
+
       .container
         .row
           .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
