@@ -36,7 +36,7 @@ block content
 
         - for video, i in contentful.featVideo[0].featuredVideo
           
-          .media-gallery__panel(style='background-image: url(#{contentful.featVideo[0].featuredVideo[i].fields.backgroundImage.fields.file.url})')
+          .media-gallery__panel(data-bg-src='#{contentful.featVideo[0].featuredVideo[i].fields.backgroundImage.fields.file.url}')
             .panel__anchor(data-vimeo='#{contentful.featVideo[0].featuredVideo[i].fields.vimeoId}')
               h3.panel__title= contentful.featVideo[0].featuredVideo[i].fields.title 
               h3.panel__title.panel__title--secondary= contentful.featVideo[0].featuredVideo[i].fields.copy
@@ -87,13 +87,14 @@ block content
         - for client, i in contentful.homepageClientList[0].clients
 
           .clients__figure
-            img(src='#{contentful.homepageClientList[0].clients[i].fields.homepageLogo.fields.file.url}')
+            img(data-img-src='#{contentful.homepageClientList[0].clients[i].fields.homepageLogo.fields.file.url}')
 
     section.contact
-      .contact__hero
+      .contact__hero(data-bg-src='/img/DSC5475.jpg')
         a.btn.contact__cta(href='/contact') let's get started
         
-    script(src='/js/media-player.js' type='text/javascript')
-    script(src='/js/process-graphic.js' type='text/javascript')
+    script(src='/js/media-player.js' type='text/javascript' defer='true')
+    script(src='/js/process-graphic.js' type='text/javascript' defer='true')
     script(type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false")
-    script(type="text/javascript" src="/js/mailchimp-popup.js")
+    script(type="text/javascript" src="/js/mailchimp-popup.js" defer='true')
+    script(src='/js/intersectionObserver.js' type='text/javascript' defer='true')

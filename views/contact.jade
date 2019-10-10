@@ -15,7 +15,7 @@ include ./includes/_head
       div(
         class='master parallax'
         data-img-mobile='#{contentful.contact[0].masterImage.fields.file.url}'
-        style='background-image:url(#{contentful.contact[0].masterImageSm.fields.file.url})'
+        data-bg-src='#{contentful.contact[0].masterImageSm.fields.file.url}'
       )
         +nav(page)
         +header('yellow')
@@ -69,3 +69,4 @@ include ./includes/_head
     .container
       include ./includes/_footer
   include ./includes/_social-icons.svg
+  script(src='/js/intersectionObserver.js' type='text/javascript' defer='true')
