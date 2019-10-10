@@ -26,7 +26,6 @@ images.forEach(image => {
 })
 
 function preloadBgImage(img) {
-  console.log(img)
   if(img.dataset.bgSrc) {
     const src = img.getAttribute('data-bg-src');
     if (!src) { return; }
