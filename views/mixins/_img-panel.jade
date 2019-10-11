@@ -22,7 +22,7 @@ mixin img-panel(category)
     default
       p Please pass a category to the mixin.
     
-  .panel-common.panel-box-img(style='background-image:url(#{asset(panelImage)})')
+  .panel-common.panel-box-img(data-bg-src='#{asset(panelImage)}')
     .panel-box-1-heading
       a(href='/blog/#{category}')= category
     .panel-box-1-body

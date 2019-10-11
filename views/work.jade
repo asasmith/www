@@ -26,7 +26,7 @@ include ./includes/_head
                 data-category='case-study'
                 data-img-sm='#{p.isCaseStudy.fields.bandImageSm.fields.file.url}'
                 data-img-md='#{p.isCaseStudy.fields.bandImageMd.fields.file.url}'
-                style='background-image:url(#{p.isCaseStudy.fields.bandImage.fields.file.url})'
+                data-bg-src='#{p.isCaseStudy.fields.bandImage.fields.file.url}'
               )
                 .case-study-panel
                   header
@@ -39,8 +39,10 @@ include ./includes/_head
                 data-category='video'
                 href='work/#{p.isVideo.fields.permalink}'
                 alt= p.isVideo.fields.title
-                style='background-image:url(#{p.isVideo.fields.thumbnail.fields.file.url})'
+                data-bg-src='#{p.isVideo.fields.thumbnail.fields.file.url}'
               )
                 span= p.isVideo.fields.hoverText
       include ./includes/_footer
   include ./includes/_social-icons.svg
+
+  script(src='/js/intersectionObserver.js' type='text/javascript' defer='true')

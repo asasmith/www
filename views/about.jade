@@ -16,7 +16,7 @@ include ./includes/_head
       div(
         class='master parallax'
         data-img-mobile='#{contentful.about[0].masterImage.fields.file.url}'
-        style='background-image:url(#{contentful.about[0].masterImageSm.fields.file.url})'
+        data-bg-src='#{contentful.about[0].masterImageSm.fields.file.url}'
       )
         +nav(page)
         +header('yellow')
@@ -38,7 +38,7 @@ include ./includes/_head
             - for members, i in contentful.team
               .row.profile
                 .col-md-4 
-                  img(src='#{contentful.about[0].team[i].fields.memberImage.fields.file.url}' alt= contentful.about[0].team[i].fields.memberName)
+                  img(data-img-src='#{contentful.about[0].team[i].fields.memberImage.fields.file.url}' alt= contentful.about[0].team[i].fields.memberName)
                 .col-md-8
                   h2.name= contentful.about[0].team[i].fields.memberName
                   h3.title= contentful.about[0].team[i].fields.memberJobTitle
@@ -47,8 +47,9 @@ include ./includes/_head
     .container
       include ./includes/_footer
   include ./includes/_social-icons.svg
-  link(rel='stylesheet', href='/css/flickity.css', media='screen')
-  script(src='/js/vendor/flickity.pkgd.min.js')
+  script(src='/js/intersectionObserver.js' type='text/javascript' defer='true')
+  link(rel='stylesheet', href='/css/flickity.css', media='screen' defer='true')
+  script(src='/js/vendor/flickity.pkgd.min.js' defer='true')
   script.
     $(document).on('ready', function() {
       setTimeout(function(){
